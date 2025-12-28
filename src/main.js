@@ -1,6 +1,6 @@
-import { clarity } from '@microsoft/clarity';
+import Clarity from '@microsoft/clarity';
 
-clarity.init('uscysmmju6');
+Clarity.init('uscysmmju6');
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
