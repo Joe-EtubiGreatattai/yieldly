@@ -1,3 +1,7 @@
+import { clarity } from '@microsoft/clarity';
+
+clarity.init('uscysmmju6');
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('mobile-menu-toggle');
