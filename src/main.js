@@ -89,8 +89,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add some dynamic parallax to hero image
+    // Waitlist Count Up Animation
+    const animatedCounter = (el) => {
+        const target = parseInt(el.getAttribute('data-target'));
+        const count = +el.innerText.replace(',', '');
+        const speed = 200; // Lower is faster
+        const inc = target / speed;
+
+        if (count < target) {
+            el.innerText = Math.ceil(count + inc).toLocaleString();
+            setTimeout(() => animatedCounter(el), 1);
+        } else {
+            el.innerText = target.toLocaleString();
+        }
+    };
+
+    // Parallax and Counter Trigger
     const heroImage = document.querySelector('.hero-image img');
+    const waitlistCount = document.getElementById('waitlist-count');
+    let counterStarted = false;
+
     if (heroImage) {
         window.addEventListener('mousemove', (e) => {
             const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
@@ -98,4 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
             heroImage.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     }
+
+    // Trigger counter when hero is revealed
+    const heroReveal = document.querySelector('.hero-content');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !counterStarted && waitlistCount) {
+                animatedCounter(waitlistCount);
+                counterStarted = true;
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (heroReveal) observer.observe(heroReveal);
 });

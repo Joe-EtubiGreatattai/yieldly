@@ -520,3 +520,46 @@ section {
     width: 100%;
   }
 }
+
+/* Waitlist Stat Enhancement */
+.waitlist-stat {
+  position: relative;
+}
+
+.waitlist-stat h3 {
+  text-shadow: 0 0 20px rgba(193, 255, 61, 0.3);
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+.waitlist-stat::after {
+  content: "LIVE";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
