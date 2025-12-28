@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yieldly | Farm Virtually. Harvest Reality.</title>
+    <meta name="description"
+        content="Rent land, buy seeds, and watch your farm grow from your phone. The 'Ikea Effect' for digital farming in Nigeria.">
+    <!-- Favicon would go here -->
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <header class="glass" id="header">
+        <nav class="container nav-bar">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text">Yieldly</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#investors">Investors</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#waitlist" class="btn btn-primary hide-mobile">Join the Waitlist</a>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#investors">Investors</a></li>
+                <li><a href="#waitlist" class="btn btn-primary">Join the Waitlist</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container grid-2">
+            <div class="hero-content reveal">
+                <span class="badge">Innovation in Agrotech</span>
+                <h1 class="text-gradient" style="font-size: 4rem; margin-bottom: 24px;">Own a Farm.<br>Dirty Your Hands
+                    <span style="color: var(--primary);">Never.</span>
+                </h1>
+                <p class="text-muted" style="font-size: 1.25rem; margin-bottom: 40px; max-width: 500px;">
+                    Experience the fulfillment of farming without the toil. Rent land, choose crops, and let our experts
+                    cultivate for you. Track every seed from your app.
+                </p>
+                <div class="hero-actions">
+                    <a href="#waitlist" class="btn btn-primary">Get Started →</a>
+                    <a href="#how-it-works" class="btn btn-outline">Watch Demo</a>
+                </div>
+                <div class="hero-stats" style="margin-top: 50px; display: flex; gap: 40px;">
+                    <div>
+                        <h3 style="color: var(--primary);">20+</h3>
+                        <p class="text-muted">Years Exp</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary);">500k+</h3>
+                        <p class="text-muted">Potential Yield</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary);">0</h3>
+                        <p class="text-muted">Dirt on Hands</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image reveal" style="position: relative;">
+                <img src="./src/assets/hero.png" alt="Digital Farming"
+                    style="border-radius: 40px; box-shadow: 0 20px 80px rgba(0,0,0,0.5);">
+                <div class="floating-card glass-card"
+                    style="position: absolute; bottom: 30px; left: -30px; max-width: 250px;">
+                    <p style="font-size: 0.9rem; font-weight: 500;">"Weekly Update: Your Maize in Kaduna is thriving.
+                        🌽"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Problem Statement -->
+        <section id="problem" class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge">The Reality</span>
+                <h2 style="font-size: var(--fs-h2); margin-bottom: 24px;">Agriculture is the future, but it's <span
+                        style="color: #ff4d4d;">facing a crisis.</span></h2>
+                <p class="text-muted" style="max-width: 700px; margin: 0 auto;">
+                    Nigeria's agricultural potential is massive, yet we're losing our food security because traditional
+                    farming isn't sustainable for the next generation.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon" style="background: rgba(255, 77, 77, 0.1); color: #ff4d4d;">😓</div>
+                    <h3>Physical Exhaustion</h3>
+                    <p class="text-muted">Traditional farming is backbreaking, labor-intensive work that discourages
+                        Nigeria's tech-savvy youth from participating.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon" style="background: rgba(255, 165, 0, 0.1); color: #ffa500;">📉</div>
+                    <h3>Financial Volatility</h3>
+                    <p class="text-muted">Risky investments, lack of real-time data, and fragmented markets make farming
+                        a high-stakes gamble for the average person.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon" style="background: rgba(193, 255, 61, 0.1); color: var(--primary);">🏘️
+                    </div>
+                    <h3>National Insecurity</h3>
+                    <p class="text-muted">An aging farmer population and declining food production threaten the very
+                        fabric of our nation's economic future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Overview Bridge -->
+        <section id="solution" class="container reveal"
+            style="padding: 80px 5%; background: linear-gradient(to bottom, rgba(193, 255, 61, 0.03) 0%, transparent 100%);">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge">The Yieldly Solution</span>
+                <h2 style="font-size: var(--fs-h2); margin-bottom: 24px;">Bridging the gap between <span
+                        style="color: var(--primary);">capital and cultivation.</span></h2>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <div class="solution-index">01</div>
+                    <h3>Digital Ownership</h3>
+                    <p class="text-muted">We transform physical land into accessible digital plots, allowing you to own
+                        a piece of Nigeria's agricultural future from anywhere.</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-index">02</div>
+                    <h3>Managed Cultivation</h3>
+                    <p class="text-muted">Professional farmers handle the soil, while you handle the strategy. We
+                        provide the expertise; you provide the vision.</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-index">03</div>
+                    <h3>Yield Optimization</h3>
+                    <p class="text-muted">Data-driven harvesting ensures your crops are sold at peak market value,
+                        maximizing your returns automatically.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution / How it Works -->
+        <section id="how-it-works" style="background: var(--bg-card); border-radius: 60px 60px 0 0;">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="reveal">
+                        <img src="./src/assets/drone.png" alt="Tech Farming" style="border-radius: 40px;">
+                    </div>
+                    <div class="reveal">
+                        <span class="badge">The Yieldly Way</span>
+                        <h2 style="font-size: 3rem; margin-bottom: 24px;">Farm Virtually.<br>Harvest Wealth.</h2>
+                        <ul class="steps" style="display: grid; gap: 30px;">
+                            <li>
+                                <h4 style="color: var(--primary);">01. Rent Your Plot</h4>
+                                <p class="text-muted">Choose fertile land across Nigeria from our vetted network.</p>
+                            </li>
+                            <li>
+                                <h4 style="color: var(--primary);">02. Cultivate Digitaly</h4>
+                                <p class="text-muted">Buy seeds and assign cultivation tasks to expert farmers via the
+                                    app.</p>
+                            </li>
+                            <li>
+                                <h4 style="color: var(--primary);">03. The IKEA Effect</h4>
+                                <p class="text-muted">Get weekly photo/video updates and analysts' yields. It's your
+                                    farm, built by you.</p>
+                            </li>
+                            <li>
+                                <h4 style="color: var(--primary);">04. Cash Out or Ship</h4>
+                                <p class="text-muted">Sell to the market for profit or have the fresh harvest shipped to
+                                    your doorstep.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="container reveal">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 3rem;">Smart Farming <span style="color: var(--primary);">Toolkit.</span></h2>
+            </div>
+            <div class="grid-3"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="glass-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">📊</div>
+                    <h3>Yield Analytics</h3>
+                    <p class="text-muted">Real-time projections and market analysis to help you decide when to sell.</p>
+                </div>
+                <div class="glass-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🛰️</div>
+                    <h3>Drone Monitoring</h3>
+                    <p class="text-muted">High-res aerial footage of your crops, delivered straight to your newsfeed.
+                    </p>
+                </div>
+                <div class="glass-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🤝</div>
+                    <h3>Expert Cultivators</h3>
+                    <p class="text-muted">Our farmers treat your land like their own, guided by AI-driven best
+                        practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investors / Impact -->
+        <section id="investors" class="reveal" style="text-align: center; padding: 120px 5%;">
+            <div class="container glass-card"
+                style="background: linear-gradient(rgba(193, 255, 61, 0.05), transparent);">
+                <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Investing in Nigeria's <span
+                        style="color: var(--primary);">Food Security.</span></h2>
+                <p class="text-muted" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">
+                    Yieldly is more than an app; it's a movement to gamify agriculture, engaging the next generation to
+                    secure our future. We're bridging the gap between capital and cultivation.
+                </p>
+                <a href="#waitlist" class="btn btn-primary">Request Pitch Deck</a>
+            </div>
+        </section>
+
+        <!-- Waitlist -->
+        <section id="waitlist" class="container reveal" style="text-align: center;">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">Join the Green Revolution.</h2>
+                <p class="text-muted" style="margin-bottom: 40px;">Be the first to know when we launch and get exclusive
+                    early-access perks.</p>
+                <form id="waitlist-form"
+                    style="display: flex; gap: 10px; border-radius: 100px; padding: 8px; background: var(--bg-card); border: 1px solid var(--glass-border);">
+                    <input type="email" placeholder="Enter your email" required
+                        style="flex: 1; background: transparent; border: none; padding: 0 20px; color: white; outline: none;">
+                    <button type="submit" class="btn btn-primary">Join Now</button>
+                </form>
+                <p id="form-msg" style="margin-top: 20px; color: var(--primary); display: none;">You're on the list!
+                    Welcome to Yieldly. 🌱</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container" style="padding: 60px 0; border-top: 1px solid var(--glass-border); text-align: center;">
+        <div class="logo" style="margin-bottom: 20px; justify-content: center;">
+            <span class="logo-icon">🌱</span>
+            <span class="logo-text">Yieldly</span>
+        </div>
+        <p class="text-muted">&copy; 2025 Yieldly Agrotech. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
