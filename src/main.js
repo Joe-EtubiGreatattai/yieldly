@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
 
             try {
-                const response = await fetch('http://localhost:5001/api/waitlist', {
+                const response = await fetch('https://yieldly.onrender.com/api/waitlist', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch initial count from backend
     const fetchCount = async () => {
         try {
-            const res = await fetch('http://localhost:5001/api/waitlist/count');
+            const res = await fetch('https://yieldly.onrender.com/api/waitlist/count');
             const data = await res.json();
             if (data.count && waitlistCount) {
                 waitlistCount.setAttribute('data-target', data.count);
