@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formMsg = document.getElementById('form-msg');
 
     if (waitlistForm) {
-        waitlistForm.addEventListener('submit', (e) => {
+        waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = waitlistForm.querySelector('input[type="email"]').value;
 
@@ -76,16 +76,38 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Joining...';
             btn.disabled = true;
 
-            setTimeout(() => {
-                console.log(`Email registered: ${email}`);
-                waitlistForm.style.display = 'none';
-                formMsg.style.display = 'block';
+            try {
+                const response = await fetch('http://localhost:5001/api/waitlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
 
-                // Track for "investors" - if they requested pitch deck
-                if (window.location.hash === '#investors') {
-                    formMsg.innerText = "Pitch deck request received! We'll be in touch. 📈";
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log(`Email registered: ${email}`);
+                    waitlistForm.style.display = 'none';
+                    formMsg.style.display = 'block';
+                    formMsg.style.color = 'var(--primary)';
+                    formMsg.innerText = data.message;
+
+                    // Update counter with new data
+                    if (waitlistCount) {
+                        waitlistCount.setAttribute('data-target', data.totalCount);
+                        animatedCounter(waitlistCount);
+                    }
+                } else {
+                    alert(data.error || 'Something went wrong. Please try again.');
+                    btn.innerText = originalText;
+                    btn.disabled = false;
                 }
-            }, 1500);
+            } catch (err) {
+                console.error('Registration error:', err);
+                alert('Connection to server failed.');
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
         });
     }
 
@@ -119,6 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Trigger counter when hero is revealed
     const heroReveal = document.querySelector('.hero-content');
+
+    // Fetch initial count from backend
+    const fetchCount = async () => {
+        try {
+            const res = await fetch('http://localhost:5001/api/waitlist/count');
+            const data = await res.json();
+            if (data.count && waitlistCount) {
+                waitlistCount.setAttribute('data-target', data.count);
+            }
+        } catch (err) {
+            console.error('Failed to fetch count:', err);
+        }
+    };
+
+    fetchCount();
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !counterStarted && waitlistCount) {
