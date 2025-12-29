@@ -41,7 +41,7 @@ app.post('/api/waitlist', async (req, res) => {
 
         res.status(201).json({
             message: 'Successfully joined the waitlist!',
-            totalCount: 12450 + count // Adding base count for effect as requested
+            totalCount: count
         });
     } catch (err) {
         console.error(err);
@@ -52,7 +52,7 @@ app.post('/api/waitlist', async (req, res) => {
 app.get('/api/waitlist/count', async (req, res) => {
     try {
         const count = await Waitlist.countDocuments();
-        res.json({ count: 12450 + count });
+        res.json({ count: count });
     } catch (err) {
         res.status(500).json({ error: 'Internal server error' });
     }
