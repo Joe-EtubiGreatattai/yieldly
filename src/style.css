@@ -18,8 +18,10 @@
   /* Fluid Typography Tokens */
   --fs-h1: clamp(2.5rem, 8vw, 4.5rem);
   --fs-h2: clamp(2rem, 6vw, 3.5rem);
-  --fs-h3: clamp(1.5rem, 4vw, 2rem);
+  --fs-h3: clamp(1.5rem, 4vw, 2.2rem);
+  --fs-body-lg: clamp(1.1rem, 2.5vw, 1.25rem);
   --fs-body: clamp(0.95rem, 2vw, 1.1rem);
+  --fs-small: 0.85rem;
 }
 
 * {
@@ -413,11 +415,97 @@ section {
   transform: translateY(-5px);
 }
 
+/* Layout Blocks */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 8vh, 80px);
+}
+
+.section-desc {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Specific Section Adjustments */
+.hero-description {
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.hero-stats {
+  margin-top: 50px;
+  display: flex;
+  gap: 40px;
+}
+
+.solution-overview {
+  padding: 80px 5%;
+  background: linear-gradient(to bottom, rgba(193, 255, 61, 0.03) 0%, transparent 100%);
+}
+
+.investors-section {
+  text-align: center;
+  padding: 120px 5%;
+}
+
+.investor-card {
+  background: linear-gradient(rgba(193, 255, 61, 0.05), transparent);
+}
+
+.waitlist-section {
+  text-align: center;
+}
+
+.waitlist-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.waitlist-form {
+  display: flex;
+  gap: 10px;
+  border-radius: 100px;
+  padding: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  margin-top: 40px;
+}
+
+.steps {
+  display: grid;
+  gap: 30px;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
 .text-gradient {
   background: linear-gradient(135deg, #ffffff 0%, var(--text-muted) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+}
+
+.text-h3 {
+  font-size: var(--fs-h3);
+}
+
+.text-lg {
+  font-size: var(--fs-body-lg);
 }
 
 /* Animations */
@@ -464,8 +552,24 @@ section {
 
   .btn {
     width: 100%;
+    max-width: 320px;
+    /* Better mobile aesthetic */
     justify-content: center;
   }
+}
+
+/* Hero Typography */
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Hero Phone Mockup */
@@ -497,6 +601,43 @@ section {
     text-align: center !important;
     padding-top: 120px !important;
     gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem !important;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px !important;
+  }
+
+  /* Specific Mobile Overrides */
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .investors-section {
+    padding: 80px 5% !important;
+  }
+
+  .waitlist-form {
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .waitlist-form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px !important;
+    text-align: center;
+  }
+
+  .waitlist-form .btn {
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Force child alignments for hero centering */
